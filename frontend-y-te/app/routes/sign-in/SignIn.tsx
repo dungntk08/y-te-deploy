@@ -76,35 +76,28 @@ export default function LoginPage() {
   return (
     <>
       <Box
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+        className="min-h-screen flex items-center justify-center px-4 py-6"
+        style={{
           background:
             "radial-gradient(circle at top, rgba(0, 184, 107, 0.08) 0, transparent 60%), #f5f5f5",
-          padding: 3,
         }}
       >
         <Card
-          sx={{
-            width: 400,
-            maxWidth: "100%",
-            boxShadow:
-              "0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02)",
-            borderRadius: 2,
-            p: 4,
-          }}
+          className="w-full max-w-md rounded-2xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.02)] bg-white"
         >
-          <Box sx={{ textAlign: "center", mb: 3 }}>
+          <Box className="text-center mb-3">
             <Typography
               variant="h4"
               component="h1"
-              sx={{ mb: 1, fontWeight: 600 }}
+              className="mb-1 font-bold text-2xl"
             >
               Hệ thống trạm y tế
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              className="text-gray-500"
+            >
               Đăng nhập để bắt đầu sử dụng hệ thống
             </Typography>
           </Box>
@@ -122,7 +115,7 @@ export default function LoginPage() {
         <Alert
           onClose={handleCloseSnackbar}
           severity={snackbar.severity}
-          sx={{ width: "100%" }}
+          className="w-full"
         >
           {snackbar.message}
         </Alert>

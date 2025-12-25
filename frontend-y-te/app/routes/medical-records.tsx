@@ -83,7 +83,7 @@ export default function MedicalRecordsPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Box className="mb-3 flex items-center justify-between">
           <Box>
             <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
               Hồ sơ Bệnh án
@@ -101,8 +101,8 @@ export default function MedicalRecordsPage() {
           </Button>
         </Box>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3 }}>
+        <Paper className="p-3">
+          <Box className="mb-3">
             <TextField
               fullWidth
               placeholder="Tìm kiếm theo tên bệnh nhân hoặc số hồ sơ..."
@@ -134,7 +134,7 @@ export default function MedicalRecordsPage() {
               <TableBody>
                 {filteredRecords.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={7} align="center" sx={{ py: 4 }}>
+                    <TableCell colSpan={7} align="center" className="py-4">
                       <Typography color="text.secondary">
                         Không tìm thấy hồ sơ nào
                       </Typography>

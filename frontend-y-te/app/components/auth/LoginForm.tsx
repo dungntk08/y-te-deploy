@@ -58,26 +58,22 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps) {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%" }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      className="w-full"
+    >
       <Typography
         variant="h5"
         component="h1"
-        sx={{
-          mb: 1,
-          textAlign: "center",
-          fontWeight: 600,
-        }}
+        className="mb-1 text-center font-semibold"
       >
         Đăng nhập
       </Typography>
       <Typography
         variant="body2"
         color="text.secondary"
-        sx={{
-          display: "block",
-          mb: 3,
-          textAlign: "center",
-        }}
+        className="block mb-3 text-center text-gray-500"
       >
         Vui lòng nhập tài khoản để truy cập hệ thống trạm y tế
       </Typography>
@@ -98,7 +94,9 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps) {
         autoComplete="username"
         margin="normal"
         InputProps={{
-          startAdornment: <PersonOutlined sx={{ mr: 1, color: "action.active" }} />,
+          startAdornment: (
+            <PersonOutlined className="mr-1 text-gray-500" />
+          ),
         }}
       />
 
@@ -119,7 +117,9 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps) {
         autoComplete="current-password"
         margin="normal"
         InputProps={{
-          startAdornment: <LockOutlined sx={{ mr: 1, color: "action.active" }} />,
+          startAdornment: (
+            <LockOutlined className="mr-1 text-gray-500" />
+          ),
         }}
       />
 
@@ -131,7 +131,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps) {
           />
         }
         label="Ghi nhớ đăng nhập"
-        sx={{ mt: 1 }}
+        className="mt-1"
       />
 
       <Button
@@ -139,7 +139,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps) {
         variant="contained"
         fullWidth
         disabled={loading}
-        sx={{ mt: 3 }}
+        className="mt-3"
         size="large"
       >
         {loading ? "Đang đăng nhập..." : "Đăng nhập"}

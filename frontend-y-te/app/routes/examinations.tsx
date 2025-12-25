@@ -106,7 +106,7 @@ export default function ExaminationsPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Khám chữa bệnh
           </Typography>
@@ -115,12 +115,12 @@ export default function ExaminationsPage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid container spacing={3} className="mb-3">
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <LocalHospital sx={{ fontSize: 40, color: "primary.main" }} />
+                <Box className="flex items-center gap-2">
+                  <LocalHospital className="text-[40px] text-blue-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {todayExaminations.length}
@@ -136,8 +136,8 @@ export default function ExaminationsPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <LocalHospital sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <LocalHospital className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {pendingCount}
@@ -153,8 +153,8 @@ export default function ExaminationsPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <LocalHospital sx={{ fontSize: 40, color: "success.main" }} />
+                <Box className="flex items-center gap-2">
+                  <LocalHospital className="text-[40px] text-green-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {completedCount}
@@ -169,13 +169,13 @@ export default function ExaminationsPage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <TextField
               placeholder="Tìm kiếm theo tên bệnh nhân hoặc chẩn đoán..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              sx={{ width: 400 }}
+              className="w-[400px] max-w-full"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -210,7 +210,7 @@ export default function ExaminationsPage() {
               <TableBody>
                 {filteredExaminations.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={8} align="center" sx={{ py: 4 }}>
+                    <TableCell colSpan={8} align="center" className="py-4">
                       <Typography color="text.secondary">
                         Không tìm thấy phiếu khám nào
                       </Typography>

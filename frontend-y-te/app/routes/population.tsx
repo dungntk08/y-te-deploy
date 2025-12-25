@@ -42,7 +42,7 @@ export default function PopulationPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Quản lý Dân số & Kế hoạch hóa Gia đình
           </Typography>
@@ -53,10 +53,13 @@ export default function PopulationPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ height: "100%", cursor: "pointer" }} onClick={() => navigate("/population/households")}>
+            <Card
+              className="h-full cursor-pointer"
+              onClick={() => navigate("/population/households")}
+            >
               <CardContent>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, py: 2 }}>
-                  <People sx={{ fontSize: 60, color: "primary.main" }} />
+                <Box className="flex flex-col items-center gap-2 py-2">
+                  <People className="text-[60px] text-blue-600" />
                   <Typography variant="h6" fontWeight="bold">
                     Quản lý Hộ gia đình
                   </Typography>
@@ -68,10 +71,13 @@ export default function PopulationPage() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ height: "100%", cursor: "pointer" }} onClick={() => navigate("/population/family-planning")}>
+            <Card
+              className="h-full cursor-pointer"
+              onClick={() => navigate("/population/family-planning")}
+            >
               <CardContent>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, py: 2 }}>
-                  <FamilyRestroom sx={{ fontSize: 60, color: "success.main" }} />
+                <Box className="flex flex-col items-center gap-2 py-2">
+                  <FamilyRestroom className="text-[60px] text-green-600" />
                   <Typography variant="h6" fontWeight="bold">
                     Kế hoạch hóa Gia đình
                   </Typography>
@@ -83,10 +89,13 @@ export default function PopulationPage() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Card sx={{ height: "100%", cursor: "pointer" }} onClick={() => navigate("/population/statistics")}>
+            <Card
+              className="h-full cursor-pointer"
+              onClick={() => navigate("/population/statistics")}
+            >
               <CardContent>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, py: 2 }}>
-                  <HealthAndSafety sx={{ fontSize: 60, color: "info.main" }} />
+                <Box className="flex flex-col items-center gap-2 py-2">
+                  <HealthAndSafety className="text-[60px] text-sky-600" />
                   <Typography variant="h6" fontWeight="bold">
                     Thống kê Dân số
                   </Typography>

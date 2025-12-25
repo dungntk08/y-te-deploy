@@ -103,7 +103,7 @@ export default function MedicationsPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Quản lý Thuốc & Dược phẩm
           </Typography>
@@ -112,12 +112,12 @@ export default function MedicationsPage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid container spacing={3} className="mb-3">
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Medication sx={{ fontSize: 40, color: "success.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Medication className="text-[40px] text-green-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {availableCount}
@@ -133,8 +133,8 @@ export default function MedicationsPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Warning sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Warning className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {lowStockCount}
@@ -150,8 +150,8 @@ export default function MedicationsPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Warning sx={{ fontSize: 40, color: "error.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Warning className="text-[40px] text-red-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {expiredCount}
@@ -166,13 +166,13 @@ export default function MedicationsPage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <TextField
               placeholder="Tìm kiếm theo tên hoặc mã thuốc..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              sx={{ width: 400 }}
+              className="w-[400px] max-w-full"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -206,7 +206,7 @@ export default function MedicationsPage() {
               <TableBody>
                 {filteredMedications.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={7} align="center" sx={{ py: 4 }}>
+                    <TableCell colSpan={7} align="center" className="py-4">
                       <Typography color="text.secondary">
                         Không tìm thấy thuốc nào
                       </Typography>

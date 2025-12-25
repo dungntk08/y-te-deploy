@@ -90,7 +90,7 @@ export default function MedicalEquipmentPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Quản lý Thiết bị Y tế
           </Typography>
@@ -99,12 +99,12 @@ export default function MedicalEquipmentPage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
-          <Grid item xs={12} sm={4}>
+        <Grid container spacing={3} className="mb-3">
+          <Grid item xs={12} sm={4} component={"div" as any}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <MedicalServices sx={{ fontSize: 40, color: "success.main" }} />
+                <Box className="flex items-center gap-2">
+                  <MedicalServices className="text-[40px] text-green-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {availableCount}
@@ -117,11 +117,11 @@ export default function MedicalEquipmentPage() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} component={"div" as any}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <MedicalServices sx={{ fontSize: 40, color: "info.main" }} />
+                <Box className="flex items-center gap-2">
+                  <MedicalServices className="text-[40px] text-sky-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {inUseCount}
@@ -134,11 +134,11 @@ export default function MedicalEquipmentPage() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} component={"div" as any}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Build sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Build className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {maintenanceCount}
@@ -153,8 +153,8 @@ export default function MedicalEquipmentPage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <Typography variant="h6" fontWeight="bold">
               Danh sách thiết bị
             </Typography>

@@ -94,7 +94,7 @@ export default function MaternalChildcarePage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Chăm sóc Bà mẹ & Trẻ em
           </Typography>
@@ -103,12 +103,12 @@ export default function MaternalChildcarePage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid container spacing={3} className="mb-3">
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <PregnantWoman sx={{ fontSize: 40, color: "primary.main" }} />
+                <Box className="flex items-center gap-2">
+                  <PregnantWoman className="text-[40px] text-blue-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {mothersCount}
@@ -124,8 +124,8 @@ export default function MaternalChildcarePage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <ChildCare sx={{ fontSize: 40, color: "success.main" }} />
+                <Box className="flex items-center gap-2">
+                  <ChildCare className="text-[40px] text-green-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {childrenCount}
@@ -141,8 +141,8 @@ export default function MaternalChildcarePage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <ChildCare sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <ChildCare className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {attentionCount}
@@ -157,8 +157,8 @@ export default function MaternalChildcarePage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <Typography variant="h6" fontWeight="bold">
               Danh sách theo dõi
             </Typography>

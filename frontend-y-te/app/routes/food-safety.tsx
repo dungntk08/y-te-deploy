@@ -90,7 +90,7 @@ export default function FoodSafetyPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             An toàn Thực phẩm
           </Typography>
@@ -99,12 +99,12 @@ export default function FoodSafetyPage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid container spacing={3} className="mb-3">
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <CheckCircle sx={{ fontSize: 40, color: "success.main" }} />
+                <Box className="flex items-center gap-2">
+                  <CheckCircle className="text-[40px] text-green-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {passedCount}
@@ -120,8 +120,8 @@ export default function FoodSafetyPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Warning sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Warning className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {warningCount}
@@ -137,8 +137,8 @@ export default function FoodSafetyPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Restaurant sx={{ fontSize: 40, color: "error.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Restaurant className="text-[40px] text-red-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {failedCount}
@@ -153,8 +153,8 @@ export default function FoodSafetyPage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <Typography variant="h6" fontWeight="bold">
               Danh sách kiểm tra
             </Typography>

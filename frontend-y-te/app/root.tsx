@@ -9,50 +9,10 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import "./global.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
-import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-
-export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-];
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#00b96b",
-    },
-    background: {
-      default: "#ffffff",
-    },
-  },
-  typography: {
-    fontFamily: '"Inter", ui-sans-serif, system-ui, sans-serif',
-    fontSize: 16,
-  },
-  shape: {
-    borderRadius: 2,
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: "none",
-          fontWeight: 500,
-        },
-      },
-    },
-  },
-});
+import { GlobalStyles, StyledEngineProvider } from "@mui/material";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -74,12 +34,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <QueryClientProvider client={queryClient}>
-        <Outlet />
-      </QueryClientProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <Outlet />
+    </QueryClientProvider>
   );
 }
 

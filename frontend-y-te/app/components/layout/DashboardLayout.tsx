@@ -92,15 +92,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const drawer = (
     <Box>
-      <Toolbar
-        sx={{
-          bgcolor: "#00b96b",
-          color: "white",
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-        }}
-      >
+      <Toolbar className="bg-primary text-white flex items-center gap-1">
         <LocalHospital />
         <Typography variant="h6" noWrap component="div" fontWeight="bold">
           Trạm Y Tế
@@ -120,23 +112,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     setMobileOpen(false);
                   }
                 }}
-                sx={{
-                  "&.Mui-selected": {
-                    bgcolor: "primary.main",
-                    color: "white",
-                    "&:hover": {
-                      bgcolor: "primary.dark",
-                    },
-                    "& .MuiListItemIcon-root": {
-                      color: "white",
-                    },
-                  },
-                }}
+                className="data-[mui-selected=true]:bg-primary-main data-[mui-selected=true]:text-white data-[mui-selected=true]:hover:bg-primary-dark"
               >
                 <ListItemIcon
-                  sx={{
-                    color: isActive ? "white" : "inherit",
-                  }}
+                  className={isActive ? "text-white" : undefined}
                 >
                   {item.icon}
                 </ListItemIcon>
@@ -150,14 +129,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   );
 
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+    <Box className="flex min-h-screen">
       <AppBar
         position="fixed"
-        sx={{
-          width: { md: `calc(100% - ${DRAWER_WIDTH}px)` },
-          ml: { md: `${DRAWER_WIDTH}px` },
-          bgcolor: "#00b96b",
-        }}
+        className="bg-primary text-white md:w-[calc(100%-280px)] md:ml-[280px]"
       >
         <Toolbar>
           <IconButton
@@ -165,15 +140,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
+            className="mr-2 md:hidden"
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" noWrap component="div" className="grow md:hidden">
             Hệ thống Quản lý Trạm Y Tế
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Typography variant="body2" sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box className="flex items-center gap-1 ml-auto">
+            <Typography variant="body2" className="hidden sm:block">
               {user?.name}
             </Typography>
             <IconButton
@@ -218,7 +193,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { md: DRAWER_WIDTH }, flexShrink: { md: 0 } }}
+        className="md:w-[280px] md:shrink-0"
       >
         <Drawer
           variant="temporary"
@@ -227,24 +202,18 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           ModalProps={{
             keepMounted: true,
           }}
-          sx={{
-            display: { xs: "block", md: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: DRAWER_WIDTH,
-            },
+          className="block md:hidden"
+          PaperProps={{
+            className: "box-border w-[280px]",
           }}
         >
           {drawer}
         </Drawer>
         <Drawer
           variant="permanent"
-          sx={{
-            display: { xs: "none", md: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: DRAWER_WIDTH,
-            },
+          className="hidden md:block"
+          PaperProps={{
+            className: "box-border w-[280px]",
           }}
           open
         >
@@ -253,13 +222,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       </Box>
       <Box
         component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { md: `calc(100% - ${DRAWER_WIDTH}px)` },
-          bgcolor: "#f5f5f5",
-          minHeight: "100vh",
-        }}
+        className="grow p-3 md:w-[calc(100%-280px)] bg-[#f5f5f5] min-h-screen"
       >
         <Toolbar />
         {children}

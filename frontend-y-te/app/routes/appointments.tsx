@@ -78,7 +78,7 @@ export default function AppointmentsPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Box className="mb-3 flex items-center justify-between">
           <Box>
             <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
               Lịch hẹn
@@ -96,7 +96,7 @@ export default function AppointmentsPage() {
           </Button>
         </Box>
 
-        <Paper sx={{ p: 3 }}>
+        <Paper className="p-3">
           <TableContainer>
             <Table>
               <TableHead>

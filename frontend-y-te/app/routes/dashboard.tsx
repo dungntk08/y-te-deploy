@@ -40,28 +40,17 @@ interface StatCardProps {
 function StatCard({ title, value, icon, color }: StatCardProps) {
   return (
     <Card
-      sx={{
-        height: "100%",
-        transition: "transform 0.2s, box-shadow 0.2s",
-        "&:hover": {
-          transform: "translateY(-4px)",
-          boxShadow: 4,
-        },
-      }}
+      className="h-full transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
     >
       <CardContent>
-        <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+        <Box className="flex items-center mb-2">
           <Avatar
-            sx={{
-              bgcolor: color,
-              width: 56,
-              height: 56,
-              mr: 2,
-            }}
+            className="w-14 h-14 mr-2"
+            style={{ backgroundColor: color }}
           >
             {icon}
           </Avatar>
-          <Box sx={{ flex: 1 }}>
+          <Box className="flex-1">
             <Typography variant="h4" component="div" fontWeight="bold">
               {value}
             </Typography>
@@ -98,12 +87,16 @@ export default function Dashboard() {
         <Typography variant="h4" component="h1" gutterBottom fontWeight="bold">
           Tổng quan
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          className="mb-4"
+        >
           Chào mừng trở lại, {user.name}! Dưới đây là tổng quan về hệ thống.
         </Typography>
 
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid className="xs:12 sm:6 md:3" component="div">
             <StatCard
               title="Tổng bệnh nhân"
               value="1,234"
@@ -111,7 +104,7 @@ export default function Dashboard() {
               color="#1976d2"
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid className="xs:12 sm:6 md:3" component="div">
             <StatCard
               title="Bác sĩ"
               value="24"
@@ -119,7 +112,7 @@ export default function Dashboard() {
               color="#00b96b"
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid className="xs:12 sm:6 md:3" component="div">
             <StatCard
               title="Lịch hẹn hôm nay"
               value="156"
@@ -127,7 +120,7 @@ export default function Dashboard() {
               color="#ed6c02"
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid className="xs:12 sm:6 md:3" component="div">
             <StatCard
               title="Hồ sơ bệnh án"
               value="3,456"
@@ -136,12 +129,12 @@ export default function Dashboard() {
             />
           </Grid>
 
-          <Grid item xs={12} md={8}>
-            <Paper sx={{ p: 3, height: "100%" }}>
+          <Grid className="xs:12 md:8" component="div">
+            <Paper className="p-3 h-full">
               <Typography variant="h6" gutterBottom fontWeight="bold">
                 Hoạt động gần đây
               </Typography>
-              <Box sx={{ mt: 2 }}>
+              <Box className="mt-2">
                 {[
                   {
                     time: "10:30",
@@ -166,25 +159,17 @@ export default function Dashboard() {
                 ].map((activity, index) => (
                   <Box
                     key={index}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      py: 1.5,
-                      borderBottom:
-                        index < 3 ? "1px solid #e0e0e0" : "none",
-                    }}
+                    className={`flex items-center py-1.5 ${
+                      index < 3 ? "border-b border-gray-200" : ""
+                    }`}
                   >
                     <Typography
                       variant="caption"
-                      sx={{
-                        minWidth: 60,
-                        color: "text.secondary",
-                        fontWeight: 500,
-                      }}
+                      className="min-w-[60px] text-gray-500 font-medium"
                     >
                       {activity.time}
                     </Typography>
-                    <Typography variant="body2" sx={{ ml: 2 }}>
+                    <Typography variant="body2" className="ml-2">
                       {activity.action}
                     </Typography>
                   </Box>
@@ -193,13 +178,13 @@ export default function Dashboard() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <Paper sx={{ p: 3, height: "100%" }}>
+          <Grid className="xs:12 md:4" component="div">
+            <Paper className="p-3 h-full">
               <Typography variant="h6" gutterBottom fontWeight="bold">
                 Thông tin tài khoản
               </Typography>
-              <Box sx={{ mt: 2 }}>
-                <Box sx={{ mb: 2 }}>
+              <Box className="mt-2">
+                <Box className="mb-2">
                   <Typography variant="caption" color="text.secondary">
                     Họ và tên
                   </Typography>
@@ -207,7 +192,7 @@ export default function Dashboard() {
                     {user.name}
                   </Typography>
                 </Box>
-                <Box sx={{ mb: 2 }}>
+                <Box className="mb-2">
                   <Typography variant="caption" color="text.secondary">
                     Tài khoản
                   </Typography>
@@ -215,7 +200,7 @@ export default function Dashboard() {
                     {user.username}
                   </Typography>
                 </Box>
-                <Box sx={{ mb: 2 }}>
+                <Box className="mb-2">
                   <Typography variant="caption" color="text.secondary">
                     Vai trò
                   </Typography>

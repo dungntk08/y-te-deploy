@@ -96,7 +96,7 @@ export default function DiseasePreventionPage() {
   return (
     <DashboardLayout>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 3 }}>
+        <Box className="mb-3">
           <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
             Phòng bệnh & Giám sát Dịch bệnh
           </Typography>
@@ -105,12 +105,12 @@ export default function DiseasePreventionPage() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid container spacing={3} className="mb-3">
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Coronavirus sx={{ fontSize: 40, color: "error.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Coronavirus className="text-[40px] text-red-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {infectiousCount}
@@ -126,8 +126,8 @@ export default function DiseasePreventionPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <HealthAndSafety sx={{ fontSize: 40, color: "warning.main" }} />
+                <Box className="flex items-center gap-2">
+                  <HealthAndSafety className="text-[40px] text-amber-500" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {nonInfectiousCount}
@@ -143,8 +143,8 @@ export default function DiseasePreventionPage() {
           <Grid item xs={12} sm={4}>
             <Card>
               <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Vaccines sx={{ fontSize: 40, color: "info.main" }} />
+                <Box className="flex items-center gap-2">
+                  <Vaccines className="text-[40px] text-sky-600" />
                   <Box>
                     <Typography variant="h4" fontWeight="bold">
                       {monitoringCount}
@@ -159,8 +159,8 @@ export default function DiseasePreventionPage() {
           </Grid>
         </Grid>
 
-        <Paper sx={{ p: 3 }}>
-          <Box sx={{ mb: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Paper className="p-3">
+          <Box className="mb-3 flex items-center justify-between">
             <Typography variant="h6" fontWeight="bold">
               Danh sách ca bệnh
             </Typography>
