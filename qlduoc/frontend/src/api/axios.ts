@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://api.qlduoc.site/api',
   withCredentials: true, // Important for Sanctum/Cookies if using SPA auth, usually needed
   headers: {
     'Content-Type': 'application/json',
